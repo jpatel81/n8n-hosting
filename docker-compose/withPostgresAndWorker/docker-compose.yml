@@ -32,7 +32,7 @@ x-shared: &shared
 
 services:
   postgres:
-    image: postgres:16
+    image: postgres:17
     restart: always
     environment:
       - POSTGRES_USER
@@ -48,7 +48,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-
+    ports:
+      - 5432:5432
   redis:
     image: redis:6-alpine
     restart: always
